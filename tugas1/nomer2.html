@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Gallery</title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #000;
+            background-color: white;
+        }
+
+        /* Header */
+        .header {
+            background-color: Orange;
+            color: red;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Content */
+        .content {
+            display: flex;
+            padding: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 20%;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #ddd;
+        }
+
+        /* Main Content */
+        .main {
+            width: 80%;
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .text {
+            width: 60%;
+            padding-right: 20px;
+        }
+
+        .image {
+            width: 40%;
+        }
+
+        .image img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: Orange;
+            color: red;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>City Gallery</h1>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul>
+                    <li onclick="showCity('Bekasi')">Bekasi</li>
+                    <li onclick="showCity('Yogyakarta')">Yogyakarta</li>
+                    <li onclick="showCity('Bali')">Bali</li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main">
+                <div class="text">
+                    <h2 id="city-title">Bekasi</h2>
+                    <p id="city-description">
+                        Kota Bekasi adalah salah satu kota di Provinsi Jawa Barat, Indonesia. Kota ini berbatasan langsung dengan Provinsi DKI Jakarta dengan jarak 24,4 km dari arah timur. Pada pertengahan tahun 2024, jumlah penduduk Kota Bekasi berjumlah 2.526.133 jiwa. 
+                    </p>
+                    <p id="city-info">
+                       Bekasi merupakan kota kelahiranku, disebut dengan kota Pahlawan. Bekasi punya julukan yang unik yaitu planet lain karena udaranya yang sangat panas
+                    </p>
+                </div>
+                <div class="image">
+                    <img id="city-image" src="https://asset-2.tstatic.net/bekasi/foto/bank/images/Kawasan-Summarecon-Bekasi-Jawa-Barat.jpg" alt="Gambar Bekasi">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Copyright @Raudya Khansa Nadhifa</p>
+        </div>
+    </div>
+
+    <script>
+        function showCity(city) {
+            let title = document.getElementById("city-title");
+            let description = document.getElementById("city-description");
+            let info = document.getElementById("city-info");
+            let image = document.getElementById("city-image");
+
+            if (city === "Bekasi") {
+                title.innerHTML = "Bekasi";
+                description.innerHTML = "Kota Bekasi adalah salah satu kota di Provinsi Jawa Barat, Indonesia. Kota ini berbatasan langsung dengan Provinsi DKI Jakarta dengan jarak 24,4 km dari arah timur. Pada pertengahan tahun 2024, jumlah penduduk Kota Bekasi berjumlah 2.526.133 jiwa.";
+                info.innerHTML = "Bekasi merupakan kota kelahiranku, disebut dengan kota Pahlawan. Bekasi punya julukan yang unik yaitu planet lain karena udaranya yang sangat panas.";
+                image.src = "https://asset-2.tstatic.net/bekasi/foto/bank/images/Kawasan-Summarecon-Bekasi-Jawa-Barat.jpg";
+                image.alt = "Gambar Bekasi";
+            } 
+            else if (city === "Yogyakarta") {
+                title.innerHTML = "Yogyakarta";
+                description.innerHTML = "Kota Yogyakarta adalah ibu kota sekaligus pusat pemerintahan dan perekonomian dari provinsi Daerah Istimewa Yogyakarta, Indonesia. Kota ini adalah kota yang mempertahankan konsep tradisional dan budaya Jawa..";
+                info.innerHTML = "Yogyakarta menjadi kota favorite saya karena terdapat banyak cerita yang terukir disini.";
+                image.src = "https://hanatourjogja.com/cni-content/uploads/modules/posts/20191103115745.jpg";
+                image.alt = "Gambar Yogyakarta";
+            } 
+            else if (city === "Bali") {
+                title.innerHTML = "Bali";
+                description.innerHTML = "Bali adalah sebuah provinsi di Indonesia yang terletak pada bagian barat Kepulauan Nusa Tenggara dan beribu kota di Kota Denpasar. Pulau Bali, yang merupakan pulau terbesar di Provinsi Bali, memiliki beberapa julukan, di antaranya Pulau Dewata dan Pulau Seribu Pura.";
+                info.innerHTML = "Bali merupakan kota yang sangat indah dan kental dengan budayanya";
+                image.src = "https://www.viceroybali.com/wp-content/uploads/2024/11/Bali-Trip-Cost-1.webp";
+                image.alt = "Gambar Tokyo";
+            }
+        }
+    </script>
+
+</body>
+</html>
